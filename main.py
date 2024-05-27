@@ -1,5 +1,3 @@
-import io
-
 from flask import Flask, render_template, redirect, url_for, request, flash, session, get_flashed_messages
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
@@ -9,10 +7,11 @@ from forms import FileUpload
 from PIL import Image as PILImage, ImageDraw, ImageFont
 import io
 import base64
+import os
 
 
 app = Flask(__name__)
-app.secret_key = "ghl3lu76gsh8"
+app.secret_key = os.environ.get('FLASK_KEY', 'default_secret_key')
 bootstrap = Bootstrap5(app)
 
 UPLOAD_FOLDER = "static/uploads"
@@ -23,7 +22,7 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///images.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI', 'sqlite:///images.db')
 db = SQLAlchemy(model_class=Base)
 
 db.init_app(app)
