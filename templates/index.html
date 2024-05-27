@@ -1,0 +1,28 @@
+{% include "header.html" %}
+<div class="container my-5">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        <div class="alert-container">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <img src="static/assets/images/home image.jpg" width="500" height="400"/><br><br><br>
+    <h1 class="text-body-emphasis">Empower Your Images with WaterMark Pro</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      WaterMark Pro adds watermarks to your image. we support PNG, JPG, JPEG, GIF.
+    </p><br>
+    <div class="d-inline-flex gap-2 mb-5">
+      <a href="{{ url_for('upload_image') }}" class="d-inline-flex align-items-center justify-content-center btn btn-primary btn-lg px-4 rounded-pill">
+        Upload Your Image
+        <svg class="bi ms-2" width="10" height="20"><use xlink:href="#arrow-right-short"></use></svg>
+      </a>
+    </div>
+  </div>
+</div>
+{% include "footer.html" %}

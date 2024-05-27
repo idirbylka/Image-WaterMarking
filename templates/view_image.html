@@ -1,0 +1,13 @@
+{% include "header.html" %}
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <h3>Watermarked Image</h3>
+        <img src="data:image/png;base64,{{ image_base64 }}" alt="Watermarked Image" class="img-fluid"/>
+        <a href="{{ url_for('upload_image') }}" class="btn btn-secondary mt-3">Go Back</a>
+        <a href="data:image/png;base64,{{ image_base64 }}" download="watermarked_image.png" class="btn btn-primary mt-3">Download Image</a>
+        <form method="post" action="{{ url_for('delete_image') }}" style="display: inline;">
+          <button type="submit" class="btn btn-danger mt-3">Delete Image</button>
+        </form>
+    </div>
+  </div>
+{% include "footer.html" %}

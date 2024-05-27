@@ -1,0 +1,15 @@
+{% include "header.html" %}
+{% from 'bootstrap5/form.html' import render_form %}
+<div class="container my-5">
+  <div class="p-5 text-center bg-body-tertiary rounded-3">
+    <img src="static/assets/images/home image.jpg" width="500" height="400"/><br><br><br>
+    <h1 class="text-body-emphasis">Empower Your Images with WaterMark Pro</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      WaterMark Pro adds watermarks to your image. we support PNG, JPG, JPEG, GIF.
+    </p><br>
+    <form method="post" enctype="multipart/form-data">
+        {{ render_form(form, novalidate=True, button_map={"submit": "primary"})}}
+    </form>
+  </div>
+</div>
+{% include "footer.html" %}

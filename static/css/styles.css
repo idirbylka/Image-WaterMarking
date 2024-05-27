@@ -1,0 +1,27 @@
+.text-primary,
+.btn-primary,
+.nav-link,
+.fs-4,
+.text-body-emphasis,
+.btn-primary:hover,
+.btn-primary:focus {
+    color: #025 !important;
+    border-color: #025 !important;
+    background-color: transparent !important;
+}
+
+.btn {
+    color: white !important;
+    border-color: #025 !important;
+    background-color: #025 !important;
+}
+
+
+.text-body-secondary {
+  color: #6c757d !important;
+}
+
+
+.social-icon svg {
+  fill: currentColor;
+}

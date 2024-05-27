@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WaterMark Pro</title>
+    {% block styles %}
+    {{ bootstrap.load_css() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% endblock %}
+    <link rel="apple-touch-icon" sizes="180x180" href="static/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none ">
+        <svg class="bi me-2" width="40" height="32"><image href="/static/assets/images/favicon-32x32.png" width="32" height="32"/></svg>
+        <span class="fs-4">WaterMark Pro</span>
+      </a>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="#" class="nav-link px-2">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2">About</a></li>
+      </ul>
+    </header>
+  </div>
